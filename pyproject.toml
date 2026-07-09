@@ -1,0 +1,55 @@
+
+[project]
+name = "transformer-from-scratch"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12.12"
+dependencies = [
+    "fastapi[standard]>=0.139.0",
+    "gunicorn>=26.0.0",
+    "loguru>=0.7.3",
+    "numpy>=2.4.6",
+    "pydantic-settings>=2.14.2",
+    "uvicorn[standard]>=0.51.0",
+]
+
+[dependency-groups]
+dev = [
+    "bandit>=1.9.4",
+    "mypy>=2.2.0",
+    "pre-commit>=4.6.0",
+    "pytest>=9.1.1",
+    "pytest-cov>=7.1.0",
+    "ruff>=0.15.20",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.ruff.lint]
+# Move your existing 'select' here
+select = ["E", "F", "I", "UP", "B", "SIM", "N"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+ignore_missing_imports = true
+# Tell Mypy that your source code is in a specific directory (e.g., 'src')
+# If your code is in the root, remove this or set it to current dir
+explicit_package_bases = true
+disable_error_code = ["untyped-decorator"]
+# Ensure these folders are truly ignored
+exclude = [
+    'notebooks/',
+    'checkpoints/'
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "--cov=app --cov-report=term-missing"

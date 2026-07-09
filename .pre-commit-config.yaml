@@ -1,0 +1,16 @@
+# .pre-commit-config.yaml
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.15.20 # Match this to your pyproject.toml version
+    hooks:
+      - id: ruff
+        args: [--fix] # Automatically fix linting errors
+      - id: ruff-format # Automatically format code
+  
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v2.2.0
+    hooks:
+      - id: mypy
+        # Optional: ensure mypy runs on all files, not just changed ones
+        args: []
+        additional_dependencies: [pydantic-settings, numpy]
