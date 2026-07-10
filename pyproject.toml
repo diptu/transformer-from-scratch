@@ -36,7 +36,7 @@ include = ["app*"]
 select = ["E", "F", "I", "UP", "B", "SIM", "N"]
 
 [tool.mypy]
-python_version = "3.11"
+python_version = "3.12"
 strict = true
 ignore_missing_imports = true
 # Tell Mypy that your source code is in a specific directory (e.g., 'src')
