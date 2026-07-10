@@ -35,3 +35,93 @@ Embedding
         │
         ▼
 Positional Encoding
+
+
+## DAY 2
+
+Embedding
+      │
+      ▼
+Q, K, V
+      │
+      ▼
+Scaled Dot-Product Attention
+
+## Day 3
+
+Embedding
+      │
+      ▼
+Multi-Head Attention
+
+## Day 4
+
+Source Sentence
+        │
+        ▼
+Embedding + Positional Encoding
+        │
+        ▼
+Encoder Layer × N
+        │
+        ▼
+Encoder Output (Memory)
+
+# Day 5
+
+Target Sentence
+(<BOS> ...)
+
+        │
+        ▼
+Masked Self-Attention
+        │
+        ▼
+Encoder–Decoder Attention
+        │
+        ▼
+Decoder Output
+
+## Day 6
+
+Source Sentence
+        │
+        ▼
+Encoder
+        │
+        ▼
+Memory
+        │
+        ▼
+Decoder
+        │
+        ▼
+Linear Layer
+        │
+        ▼
+Vocabulary Logits
+        │
+        ▼
+Cross-Entropy Loss
+
+## Day 7
+
+English
+"I love AI"
+
+        │
+        ▼
+Tokenizer
+        │
+        ▼
+Encoder
+        │
+        ▼
+Decoder
+        │
+        ▼
+Greedy Decoding
+        │
+        ▼
+French
+"J'aime l'IA"
